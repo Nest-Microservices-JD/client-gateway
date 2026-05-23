@@ -29,7 +29,7 @@ export class OrdersController {
   ): Observable<OrderClient> {
     return this.client.send('createOrder', createOrderDto).pipe(
       catchError((error) => {
-        throw new RpcException(error as unknown as object);
+        throw new RpcException(error as object);
       }),
     );
   }
@@ -40,7 +40,7 @@ export class OrdersController {
   ): Observable<AllFilterOrderResponse> {
     return this.client.send('findAllOrders', orderPaginationDto).pipe(
       catchError((error) => {
-        throw new RpcException(error as unknown as object);
+        throw new RpcException(error as object);
       }),
     );
   }
@@ -51,7 +51,7 @@ export class OrdersController {
   ): Observable<OrderClient> {
     return this.client.send('findOneOrder', { id }).pipe(
       catchError((error) => {
-        throw new RpcException(error as unknown as object);
+        throw new RpcException(error as object);
       }),
     );
   }
@@ -68,7 +68,7 @@ export class OrdersController {
       })
       .pipe(
         catchError((error) => {
-          throw new RpcException(error as unknown as object);
+          throw new RpcException(error as object);
         }),
       );
   }
@@ -82,7 +82,7 @@ export class OrdersController {
       .send('changeOrderStatus', { id, status: statusDto.status })
       .pipe(
         catchError((error) => {
-          throw new RpcException(error as unknown as object);
+          throw new RpcException(error as object);
         }),
       );
   }
